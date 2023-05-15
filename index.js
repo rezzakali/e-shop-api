@@ -6,7 +6,6 @@ import express from 'express';
 import morgan from 'morgan';
 
 // internal import
-import path from 'path';
 import connectDb from './config/db.js';
 import errorHandler from './middlewares/errorHandler.js';
 import authRoutes from './routes/authRoutes.js';
@@ -49,9 +48,9 @@ app.use('/api/v1/products', productRoutes);
 app.use('/api/v1/payment', paymentRoutes);
 app.use('/api/v1/orders', ordersRoutes);
 
-app.use('*', function (req, res) {
-  res.sendFile(path.join(__dirname, './client/dist/index.html'));
-});
+// app.use('*', function (req, res) {
+//   res.sendFile(path.join(__dirname, './client/dist/index.html'));
+// });
 
 // error handler || mongodb related
 app.use(errorHandler);
