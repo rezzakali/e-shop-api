@@ -14,14 +14,14 @@ import categoryRoutes from './routes/categoryRoutes.js';
 import ordersRoutes from './routes/ordersRoutes.js';
 import paymentRoutes from './routes/paymentRoutes.js';
 import productRoutes from './routes/productRoutes.js';
-import {fileURLToPath} from 'url';
+// import {fileURLToPath} from 'url';
 
 // config dotenv
 dotenv.config();
 
 // esmodule file
-const __filename=fileURLToPath(import.meta.url);
-const __direname=path.dirname(__filename);
+// const __filename=fileURLToPath(import.meta.url);
+// const __direname=path.dirname(__filename);
 
 // enable colors
 colors.enable();
@@ -40,7 +40,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 
-app.use(express.static(path.join(__dirname, './client/dist')));
+// app.use(express.static(path.join(__dirname, './client/dist')));
 
 // route
 app.use('/api/v1/auth', authRoutes);
