@@ -176,6 +176,10 @@ router.post(
         });
     }
 
+    if (eventType === 'checkout.session.expired') {
+      res.status(500).send('Session expire');
+    }
+
     res.status(200).end();
   }
 );
